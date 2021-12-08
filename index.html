@@ -9,7 +9,7 @@
 <body>
 
 
-
+<h1>nucamp community coding Bootcamp</h1>
 
 
 
@@ -30,10 +30,26 @@
                 this.level = level;
                 this.students = students;
             }
+            
+            registerStudents(studentToEnroll){
+                if(this.students.filter(student => student.email === studentToEnroll.email).length){
+                    console.log("this student is already enrolled");
+
+                } else {
+                    this.students.push(studentToEnroll);     
+                console.log(`registering student ${studentToEnroll.name}`);           }
+
+            }
         }
 
-
+        const student01 = new Student("Jupiter", "jup@.com", "kansas city");
+        const nucamp = new Bootcamp("nucamp", 1, []);
+        nucamp.registerStudents(student01);
+        console.log("is this even working?");
 
     </script>
+
 </body>
 </html>
+
+
